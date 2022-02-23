@@ -1,24 +1,24 @@
 package com.example.ccpractice.entity;
 
 public class Student {
-    private Integer id;
-    private Integer age;
+    private int id;
+    private int age;
     private String sex;
     private String name;
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public Integer getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(Integer age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
