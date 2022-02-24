@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.ccpractice.mapper.StudentInfoMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.ccpractice.entity.StudentInfo">
+        <result column="id" jdbcType="INTEGER" property="id" />
+        <result column="college" jdbcType="VARCHAR" property="college"/>
+        <result column="department" jdbcType="VARCHAR" property="department"/>
+        <result column="classes" jdbcType="VARCHAR" property="classes"/>
+        <result column="age" jdbcType="INTEGER" property="age" />
+        <result column="sex" jdbcType="VARCHAR" property="sex" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+    </resultMap>
+
+    <insert id="save"  parameterType="com.example.ccpractice.entity.StudentInfo">
+        insert into
+            student_info(college,department,classes,name,age,sex)
+            values(#{college,jdbcType=VARCHAR},#{department,jdbcType=VARCHAR},#{classes,jdbcType=VARCHAR},
+                   #{name,jdbcType=VARCHAR},#{age,jdbcType=INTEGER},#{sex,jdbcType=VARCHAR})
+    </insert>
+
+</mapper>

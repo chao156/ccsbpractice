@@ -9,9 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
+@RequestMapping("api")
 public class LoginController {
     @CrossOrigin
-    @RequestMapping("api/login")
+    @RequestMapping("login")
     @ResponseBody
     public Result login(@RequestBody User user){
         String username = user.getUsername();
