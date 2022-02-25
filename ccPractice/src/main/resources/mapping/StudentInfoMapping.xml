@@ -18,5 +18,7 @@
             values(#{college,jdbcType=VARCHAR},#{department,jdbcType=VARCHAR},#{classes,jdbcType=VARCHAR},
                    #{name,jdbcType=VARCHAR},#{age,jdbcType=INTEGER},#{sex,jdbcType=VARCHAR})
     </insert>
-
+    <select id="selectStudentInfo" resultMap="BaseResultMap">
+        select * from student_info
+    </select>
 </mapper>
