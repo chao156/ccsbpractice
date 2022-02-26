@@ -21,4 +21,8 @@
     <select id="selectStudentInfo" resultMap="BaseResultMap">
         select * from student_info
     </select>
+
+    <delete id="batchDelete" parameterType="HashMap">
+        delete from student_info where id in #{ids,jdbcType=VARCHAR}
+    </delete>
 </mapper>

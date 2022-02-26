@@ -8,4 +8,5 @@ import java.util.List;
 public interface StudentInfoService {
     int save(StudentInfo studentInfo);
     List<StudentInfo> selectStudentInfo();
+    int batchDelete(String ids);
 }
