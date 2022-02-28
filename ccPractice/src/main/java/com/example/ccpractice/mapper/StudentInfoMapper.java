@@ -12,5 +12,5 @@ public interface StudentInfoMapper {
 
     int save(StudentInfo studentInfo);
     List<StudentInfo> selectStudentInfo();
-    int batchDelete(HashMap<String,Object> map);
+    int batchDelete(String id);
 }

@@ -47,7 +47,6 @@ public class StudentInfoController {
         String idString = s.substring(0,s.length()-1);
         int tag = service.batchDelete(idString);
         if(tag == 1) {
-            //前端调用后端用GET找不到的问题 org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing
             //使用post请求发送的数据后台接受发现被转码(不是乱码)
             return new Result(200);
         }else{

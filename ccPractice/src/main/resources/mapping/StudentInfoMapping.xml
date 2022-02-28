@@ -22,7 +22,7 @@
         select * from student_info
     </select>
 
-    <delete id="batchDelete" parameterType="HashMap">
-        delete from student_info where id in #{ids,jdbcType=VARCHAR}
+    <delete id="batchDelete" parameterType="java.util.HashMap">
+        delete from student_info where id = #{id}
     </delete>
 </mapper>

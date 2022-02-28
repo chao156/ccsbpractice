@@ -25,10 +25,15 @@ public class StudentInfoServiceImpl implements StudentInfoService {
     }
 
     public int batchDelete(String ids){
-
+        int tag = 1;
         String[] idArray = ids.split(",");
-        HashMap<String,Object> map = new HashMap<String,Object>();
-        map.put("ids",idArray);
-        return mapper.batchDelete(map);
+        for(int i = 0 ; i < idArray.length ; i++){
+            tag = mapper.batchDelete(idArray[i]);
+            if(tag == 0){
+                break;
+            }
+        }
+        return tag;
+
     }
 }
