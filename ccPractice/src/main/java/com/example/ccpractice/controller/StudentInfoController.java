@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.List;
 
 @Controller
@@ -39,10 +41,14 @@ public class StudentInfoController {
 
     @CrossOrigin
     @ResponseBody
-    @RequestMapping("/batchDelete")
-    public Result batchDelete(@RequestBody String ids){
-        int tag = service.batchDelete(ids);
+    @RequestMapping(value = "/batchDelete",produces = "application/json")
+    public Result batchDelete(@RequestBody String ids) throws UnsupportedEncodingException {
+        String s = URLDecoder.decode(ids,"utf-8");
+        String idString = s.substring(0,s.length()-1);
+        int tag = service.batchDelete(idString);
         if(tag == 1) {
+            //前端调用后端用GET找不到的问题 org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing
+            //使用post请求发送的数据后台接受发现被转码(不是乱码)
             return new Result(200);
         }else{
             return new Result(400);
