@@ -9,4 +9,5 @@ public interface StudentInfoService {
     int save(StudentInfo studentInfo);
     List<StudentInfo> selectStudentInfo();
     int batchDelete(String ids);
+    StudentInfo getStudent();
 }

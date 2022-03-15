@@ -12,7 +12,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("student")
 public class StudentInfoController {
 
@@ -47,7 +47,6 @@ public class StudentInfoController {
         String idString = s.substring(0,s.length()-1);
         int tag = service.batchDelete(idString);
         if(tag == 1) {
-            //使用post请求发送的数据后台接受发现被转码(不是乱码)
             return new Result(200);
         }else{
             return new Result(400);
