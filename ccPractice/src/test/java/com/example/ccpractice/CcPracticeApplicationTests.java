@@ -25,8 +25,8 @@ class CcPracticeApplicationTests {
 
     @Test
     public void Test(){
-        StudentInfo student = service.getStudent();
-        System.out.println(student);
+        List<StudentInfo> list = service.getStudent();
+        System.out.println(list);
     }
 
 

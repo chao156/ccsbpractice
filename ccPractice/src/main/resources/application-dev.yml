@@ -9,9 +9,9 @@ spring:
     url: jdbc:mysql://110.40.195.72:3306/practiceDB?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
     driver-class-name: com.mysql.cj.jdbc.Driver
 
-mybatis:
-  mapper-locations: classpath:mapping/*.xml
-  type-aliases-package: com.example.demo.entity
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 #showSql
 logging:

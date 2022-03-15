@@ -1,7 +1,6 @@
 package com.example.ccpractice.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.example.ccpractice.entity.Student;
 import com.example.ccpractice.entity.StudentInfo;
 import com.example.ccpractice.mapper.StudentInfoMapper;
 import com.example.ccpractice.service.StudentInfoService;
@@ -26,12 +25,12 @@ public class StudentInfoServiceImpl implements StudentInfoService {
     }
 
     @Override
-    public StudentInfo getStudent(){
+    public List<StudentInfo> getStudent(){
         LambdaQueryWrapper<StudentInfo> wrapper = new LambdaQueryWrapper();
         wrapper.eq(StudentInfo::getId,null)
                 .eq(StudentInfo::getAge,18);
-        StudentInfo studentInfo = mapper.selectOne(wrapper);
-        return studentInfo;
+        List<StudentInfo> list = mapper.selectList(wrapper);
+        return list;
     }
     public int batchDelete(String ids){
         int tag = 1;
