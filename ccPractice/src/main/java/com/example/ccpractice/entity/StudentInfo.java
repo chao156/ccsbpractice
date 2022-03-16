@@ -1,9 +1,14 @@
 package com.example.ccpractice.entity;
 
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+
 import javax.persistence.Table;
 
+@TableName("student_info")
 public class StudentInfo {
 
+    @TableId
     private int id;
     private String college;
     private String department;

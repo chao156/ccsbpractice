@@ -10,8 +10,9 @@ import java.util.List;
 
 @Mapper
 public interface StudentInfoMapper extends BaseMapper<StudentInfo> {
-
     int save(StudentInfo studentInfo);
     List<StudentInfo> selectStudentInfo();
-    int batchDelete(String id);
+    int batchDelete(String ids);
+    List<StudentInfo> getStudent();
+
 }

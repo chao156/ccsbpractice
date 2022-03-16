@@ -25,4 +25,5 @@
     <delete id="batchDelete" parameterType="java.util.HashMap">
         delete from student_info where id = #{id}
     </delete>
+    <select id="selectList">
 </mapper>

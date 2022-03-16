@@ -18,8 +18,6 @@ import java.util.List;
 @Transactional
 class CcPracticeApplicationTests {
 
-    @Autowired()
-    private StudentMapper mapper;
     @Autowired
     private StudentInfoService service;
 
